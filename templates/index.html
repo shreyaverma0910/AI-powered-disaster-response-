@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>AI Disaster Response</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>AI-Powered Disaster Response</h1>
+
+<form action="/predict" method="POST" enctype="multipart/form-data">
+
+<input type="file" name="image" required>
+
+<button type="submit">Analyze</button>
+
+</form>
+
+{% if prediction %}
+
+<h2>Prediction: {{ prediction }}</h2>
+
+<img src="{{ image_path }}" width="300">
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
